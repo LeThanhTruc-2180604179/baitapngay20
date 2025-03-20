@@ -28,10 +28,10 @@ app.use('/auth', require('./routes/auth'));
 app.use('/products', require('./routes/products'));
 app.use('/categories', require('./routes/categories'));
 //
-mongoose.connect('mongodb://localhost:27017/C5');
-mongoose.connection.on('connected',function(){
-  console.log("connected");
-})
+mongoose.connect('mongodb+srv://thanhtruc:NFxmk6HMlThuBW9n@cluster0.eso4e.mongodb.net/myDatabase?retryWrites=true&w=majority&appName=Cluster0')
+  .then(() => console.log("✅ Kết nối MongoDB Atlas thành công!"))
+  .catch(err => console.error("❌ Lỗi kết nối MongoDB:", err));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
